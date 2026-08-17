@@ -14,9 +14,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/bricolage-grotesque-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic-400-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <script src="/main.js" defer></script>
 </head>
@@ -53,6 +53,7 @@
   </div>
 
   <section class="section wrap" aria-label="About me" style="padding-top:clamp(36px,5vw,60px)">
+    <h2 class="sr-only">Background and availability</h2>
     <div class="about-grid">
       <div class="fx">
         <p>I'm Syed Zulqarnain Hassan, a data scientist and ML engineer. I finished my MS in Data Science at NYIT in May 2026, where I received the Data Science Graduate Achievement Award at the CoECS Commencement Awards Ceremony and worked as a Graduate Research Assistant on LLM and semantic-search research and a course-scheduling study covering 3,300+ undergraduates.</p>
@@ -62,7 +63,7 @@
       </div>
       <div class="fx" style="--d:.12s">
         <figure class="cert">
-          <img src="/assets/award-certificate.webp" alt="Data Science Graduate Achievement Award certificate, New York Institute of Technology" loading="lazy">
+          <img src="/assets/award-certificate.webp" alt="Data Science Graduate Achievement Award certificate, New York Institute of Technology" width="860" height="735">
           <figcaption>Data Science Graduate Achievement Award · NYIT CoECS · May 2026</figcaption>
         </figure>
         <ul class="facts">
@@ -102,15 +103,15 @@
     </div>
     <div class="snaps">
       <figure class="snap fx" style="--r2:-2deg;--d:0s">
-        <img src="/assets/nyit-commencement.webp" alt="Zulqarnain in regalia beside the New York Institute of Technology banner at commencement" loading="lazy">
+        <img src="/assets/nyit-commencement.webp" alt="Zulqarnain in regalia beside the New York Institute of Technology banner at commencement" width="500" height="375" loading="lazy">
         <figcaption>MS Data Science · NYIT, Class of 2026</figcaption>
       </figure>
       <figure class="snap fx" style="--r2:1.5deg;--d:.08s">
-        <img src="/assets/nyc-skyline.webp" alt="New York Institute of Technology building at Columbus Circle, New York City" loading="lazy">
+        <img src="/assets/nyc-skyline.webp" alt="New York Institute of Technology building at Columbus Circle, New York City" width="500" height="375" loading="lazy">
         <figcaption>NYIT · New York City</figcaption>
       </figure>
       <figure class="snap fx" style="--r2:-1.4deg;--d:.16s">
-        <img src="/assets/fast-campus.webp" alt="FAST-NUCES campus, Lahore" loading="lazy">
+        <img src="/assets/fast-campus.webp" alt="FAST-NUCES campus, Lahore" width="500" height="375" loading="lazy">
         <figcaption>BS Electrical Engineering · FAST-NUCES, Lahore</figcaption>
       </figure>
     </div>
@@ -163,7 +164,7 @@
           <li><a href="/work/#jobcraft">JobCraft</a></li>
           <li><a href="/work/#medbot">MedBot</a></li>
           <li><a href="/work/#nyit">NYIT study</a></li>
-          <li><a href="/work/#altechra">Altechra</a></li>
+          <li><a href="/work/#altechra-case">Altechra</a></li>
         </ul>
       </nav>
       <nav class="foot-col" aria-label="Elsewhere">
