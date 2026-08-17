@@ -1,2 +1,3 @@
-# zulqarnainhassan.com
-Personal site — data scientist &amp; ML engineer. Live at https://zulqarnainhassan.com
+﻿# zulqarnainhassan.com
+
+Personal site of Syed Zulqarnain Hassan - data scientist & ML engineer. Live at https://zulqarnainhassan.com
