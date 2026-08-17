@@ -8,12 +8,20 @@
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
   if (menuBtn && navLinks) {
+    const closeMenu = refocus => {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      if (refocus) menuBtn.focus();
+    };
     menuBtn.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     navLinks.addEventListener('click', e => {
-      if (e.target.tagName === 'A') { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+      if (e.target.tagName === 'A') closeMenu(e.target.getAttribute('href').startsWith('#'));
+    });
+    addEventListener('keydown', e => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu(true);
     });
   }
 
@@ -72,26 +80,25 @@
     cio.observe(el);
   });
 
-  // hero figure parallax + pinned word scrub + progress bar, one rAF loop
-  const fig = document.querySelector('.hero-figure');
+  // pinned word scrub + progress bar, one rAF loop
   const scrubWrap = document.getElementById('story');
   const progress = document.getElementById('progress');
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   let ticking = false;
   const apply = () => {
     ticking = false;
-    if (fig) fig.style.transform = 'translateY(' + Math.min(48, scrollY * 0.07).toFixed(1) + 'px)';
     if (progress) progress.style.transform = 'scaleX(' + clamp(scrollY / (document.documentElement.scrollHeight - innerHeight), 0, 1).toFixed(4) + ')';
     if (scrubWrap && words.length) {
       const vh = innerHeight;
       const rect = scrubWrap.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > vh) return; // scrub off-screen: skip the word loop
       const total = scrubWrap.offsetHeight - vh;
       if (total > 0) {
         const p = clamp(-rect.top / total, 0, 1);
         const n = words.length;
         for (let i = 0; i < n; i++) {
           const start = (i / n) * 0.68;
-          words[i].style.opacity = String(0.13 + 0.87 * clamp((p - start) / 0.16, 0, 1));
+          words[i].style.opacity = String(0.45 + 0.55 * clamp((p - start) / 0.16, 0, 1));
         }
       }
     }

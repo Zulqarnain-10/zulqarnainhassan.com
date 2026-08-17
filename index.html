@@ -14,9 +14,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/bricolage-grotesque-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic-400-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <script src="/main.js" defer></script>
 <script type="application/ld+json">
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="hero-figure" data-up style="--d:.2s">
-        <img src="/assets/portrait-cut.webp" alt="Syed Zulqarnain Hassan" width="1054" height="1343" fetchpriority="high">
+        <img src="/assets/portrait-cut.webp" alt="Syed Zulqarnain Hassan" width="880" height="1121" fetchpriority="high" decoding="async">
       </div>
     </section>
 
@@ -86,21 +86,21 @@
       <ol>
         <li style="--i:0">
           <span class="idx" aria-hidden="true">01</span>
-          <span class="time">May 2025–now</span>
+          <span class="time"><span class="livedot" aria-hidden="true"></span>May 2025–now</span>
           <span class="what">Upwork <span class="role">· freelance data science &amp; ML</span></span>
           <span class="measure">Top Rated · 90%+ JSS · $40K+ · 38+ contracts</span>
           <a class="receipt" href="https://www.upwork.com/freelancers/~01bd0c312572d26561">Upwork profile ↗</a>
         </li>
         <li style="--i:1">
           <span class="idx" aria-hidden="true">02</span>
-          <span class="time">Apr 2025–now</span>
-          <span class="what"><a href="/work/#altechra">Altechra</a> <span class="role">· founder</span></span>
+          <span class="time"><span class="livedot" aria-hidden="true"></span>Apr 2025–now</span>
+          <span class="what"><a href="/work/#altechra-case">Altechra</a> <span class="role">· founder</span></span>
           <span class="measure">40+ products shipped</span>
           <a class="receipt" href="https://altechra.com">altechra.com ↗</a>
         </li>
         <li style="--i:2">
           <span class="idx" aria-hidden="true">03</span>
-          <span class="time">Aug 2024–now</span>
+          <span class="time"><span class="livedot" aria-hidden="true"></span>Aug 2024–now</span>
           <span class="what"><a href="/work/#nsk">NSK</a> <span class="role">· petroleum wholesale operations analytics, part-time</span></span>
           <span class="measure">+15% revenue · −30% reporting time</span>
           <span class="receipt internal">internal</span>
@@ -266,7 +266,7 @@
           <li><a href="/work/#jobcraft">JobCraft</a></li>
           <li><a href="/work/#medbot">MedBot</a></li>
           <li><a href="/work/#nyit">NYIT study</a></li>
-          <li><a href="/work/#altechra">Altechra</a></li>
+          <li><a href="/work/#altechra-case">Altechra</a></li>
         </ul>
       </nav>
       <nav class="foot-col" aria-label="Elsewhere">
