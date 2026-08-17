@@ -11,13 +11,14 @@
 <meta property="og:url" content="https://zulqarnainhassan.com/">
 <link rel="canonical" href="https://zulqarnainhassan.com/">
 <meta name="theme-color" content="#070E1C">
-<!-- TODO: <meta property="og:image" content="https://zulqarnainhassan.com/og.png"> -->
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script src="/main.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,328 +29,10 @@
   "email": "mailto:zulqarnainhsyed@gmail.com",
   "alumniOf": {"@type": "CollegeOrUniversity", "name": "New York Institute of Technology"},
   "worksFor": {"@type": "Organization", "name": "Altechra", "url": "https://altechra.com"},
-  "sameAs": ["https://www.linkedin.com/in/syedzulqarnainh", "https://github.com/Zulqarnain-10", "https://www.upwork.com/freelancers/~01bd0c312572d26561"],
+  "sameAs": ["https://www.linkedin.com/in/syedzulqarnainh", "https://github.com/Zulqarnain-10", "https://www.upwork.com/freelancers/~01bd0c312572d26561", "https://www.instagram.com/szulqarnain22", "https://x.com/szulqarnain22"],
   "url": "https://zulqarnainhassan.com"
 }
 </script>
-<style>
-  :root{
-    /* dark bands (kept from the ship-log design) */
-    --bg-d:#070E1C; --band:#0A1628; --band-2:#0D1B33; --line-d:#1E3355;
-    --fog:#EAF0F9; --mist:#A2B4CE;
-    /* warm light body (Ali Abdaal off-white) */
-    --bg:#FBF8F2; --panel:#FFFFFF; --cream:#F4EEE1;
-    --ink:#13233B; --muted:#5B6B80; --line:rgba(19,35,59,.10);
-    --blue-soft:#E5EEFF; --peach-soft:#FDEDDD;
-    /* accents */
-    --blue:#3B96FF; --blue-ink:#1560D6; --coral:#FF6B35; --coral-ink:#D9480F; --coral-deep:#B33E0B; --warm-ink:#B4530F;
-    --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
-    --serif:"Fraunces",Georgia,serif;
-    --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    --wrap:1160px; --gutter:clamp(20px,5vw,48px);
-    --sp:clamp(76px,10vw,124px);
-    --ease:cubic-bezier(.16,1,.3,1);
-    --shadow:0 14px 40px rgba(19,35,59,.08);
-    --shadow-lg:0 28px 64px rgba(19,35,59,.13);
-    --r:24px;
-    --grain:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='160'%20height='160'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.9'%20numOctaves='2'/%3E%3CfeColorMatrix%20values='0%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%20.045%200'/%3E%3C/filter%3E%3Crect%20width='160'%20height='160'%20filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  *{box-sizing:border-box}
-  html{color-scheme:light}
-  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.7;font-size:1.0625rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  a{color:inherit}
-  ::selection{background:var(--blue);color:var(--bg-d)}
-  :focus-visible{outline:2px solid var(--blue-ink);outline-offset:3px;border-radius:4px}
-  .band-dark :focus-visible{outline-color:var(--blue)}
-  img{max-width:100%}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
-  .skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:8px 12px;z-index:100;font-family:var(--mono);font-size:.8125rem}
-  .skip:focus{left:8px}
-  .progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,var(--blue),var(--coral));transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
-  @media (prefers-reduced-motion:reduce){.progress{display:none}}
-  html{scrollbar-width:thin;scrollbar-color:#2A4A7A var(--bg)}
-  ::-webkit-scrollbar{width:11px}
-  ::-webkit-scrollbar-track{background:var(--bg)}
-  ::-webkit-scrollbar-thumb{background:#2A4A7A;border-radius:8px;border:3px solid var(--bg)}
-  ::-webkit-scrollbar-thumb:hover{background:var(--blue-ink)}
-  .todo{background:rgba(255,107,53,.14);color:var(--coral-ink);padding:0 5px;border-radius:4px;font-family:var(--mono);font-size:.85em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-  .band-dark{background:var(--band);color:var(--fog)}
-  .band-dark .todo{color:var(--coral)}
-  .band-hero{overflow:clip;background:
-    var(--grain),
-    radial-gradient(1200px 620px at 86% -10%, rgba(59,150,255,.17), transparent 60%),
-    radial-gradient(820px 460px at -6% 104%, rgba(255,107,53,.10), transparent 58%),
-    radial-gradient(rgba(234,240,249,.05) 1px, transparent 1.5px),
-    linear-gradient(180deg, #081120, var(--band) 46%);
-    background-size:160px 160px,auto,auto,26px 26px,auto}
-  .band-contact{background:
-    var(--grain),
-    radial-gradient(1000px 520px at 12% -18%, rgba(59,150,255,.15), transparent 60%),
-    radial-gradient(700px 420px at 98% 112%, rgba(255,107,53,.09), transparent 58%),
-    radial-gradient(rgba(234,240,249,.045) 1px, transparent 1.5px),
-    var(--band);
-    background-size:160px 160px,auto,auto,26px 26px,auto}
-  .band-foot{background:var(--grain),var(--band);background-size:160px 160px,auto}
-
-  /* serif helpers (Fraunces = the Recoleta look Ali uses) */
-  .acc{font-family:var(--serif);font-style:italic;font-weight:550;letter-spacing:-.01em}
-  .hl{background:linear-gradient(104deg, transparent 1%, rgba(255,178,107,.55) 3%, rgba(255,178,107,.55) 96%, transparent 98%);background-size:100% .5em;background-position:0 80%;background-repeat:no-repeat;padding:0 .06em}
-
-  /* Reveal system */
-  .js .fx{opacity:0;transform:translateY(30px) scale(.985);filter:blur(9px);transition:opacity .95s var(--ease),transform .95s var(--ease),filter .95s var(--ease);transition-delay:var(--d,0s)}
-  .js .fx.in{opacity:1;transform:none;filter:none}
-  @media (prefers-reduced-motion:reduce){.js .fx{opacity:1;transform:none;filter:none;transition:none}}
-
-  /* Nav */
-  .sitenav{position:sticky;top:0;z-index:50;background:rgba(7,14,28,.55);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border-bottom:1px solid transparent;transition:background .3s ease,border-color .3s ease}
-  .sitenav.scrolled{background:rgba(7,14,28,.86);border-bottom-color:var(--line-d)}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-family:var(--mono);font-size:.8125rem;letter-spacing:.02em}
-  .brand{font-family:var(--display);font-size:1.05rem;font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--fog)}
-  .brand .bdot{color:var(--coral)}
-  .nav-links{list-style:none;display:flex;gap:24px;margin:0;padding:0}
-  .nav-links a{color:var(--mist);text-decoration:none;transition:color .2s ease}
-  .nav-links a:hover{color:var(--fog)}
-  .nav-right{display:flex;align-items:center;gap:12px}
-  .menu-btn{display:none;background:transparent;border:1px solid var(--line-d);color:var(--fog);border-radius:10px;width:42px;height:42px;font-size:1.15rem;cursor:pointer}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;font-family:var(--mono);font-size:.8125rem;text-decoration:none;border:1px solid transparent;line-height:1.2;white-space:nowrap;transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .3s var(--ease),box-shadow .3s var(--ease)}
-  .btn:hover{transform:translateY(-2px)}
-  @media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
-  .btn-primary{background:var(--blue);color:var(--bg-d);font-weight:500;box-shadow:0 4px 18px rgba(59,150,255,.25)}
-  .btn-primary:hover{background:#57A5FF;box-shadow:0 8px 26px rgba(59,150,255,.35)}
-  .btn-ghost{border-color:rgba(255,255,255,.16);color:var(--fog)}
-  .btn-ghost:hover{border-color:var(--mist);background:rgba(255,255,255,.05)}
-  @media (max-width:760px){
-    .nav-links{display:none;position:absolute;top:calc(100% + 10px);right:var(--gutter);left:var(--gutter);flex-direction:column;gap:4px;background:rgba(10,22,40,.97);border:1px solid var(--line-d);border-radius:16px;padding:12px;box-shadow:0 24px 60px rgba(3,8,18,.6)}
-    .nav-links a{padding:12px 16px;border-radius:10px}
-    .nav-links a:hover{background:rgba(255,255,255,.05)}
-    .sitenav.open .nav-links{display:flex}
-    .menu-btn{display:inline-flex;align-items:center;justify-content:center}
-    .nav-cta{display:none}
-  }
-
-  /* Hero */
-  .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(36px,5vw,76px);align-items:center;padding-block:clamp(52px,8vw,104px) clamp(36px,5vw,60px)}
-  @media (max-width:900px){.hero{grid-template-columns:1fr}}
-  .eyebrow{font-family:var(--mono);font-size:.875rem;color:var(--mist);letter-spacing:.03em;margin:0 0 22px}
-  h1{font-family:var(--display);font-weight:800;font-size:clamp(2.9rem,7.2vw,6.1rem);line-height:.97;letter-spacing:-.028em;margin:0 0 24px;max-width:13ch}
-  h1 em{font-family:var(--serif);font-style:italic;font-weight:550;font-size:1.05em;letter-spacing:-.01em}
-  h1 em, h1 em .hw{text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:.06em;text-underline-offset:.1em}
-  @media (prefers-reduced-motion:no-preference){
-    .hw{display:inline-block;opacity:0;transform:translateY(.5em) rotate(1.2deg);animation:wup .65s var(--ease) forwards;animation-delay:var(--wd,0s)}
-    @keyframes wup{to{opacity:1;transform:none}}
-  }
-  .lede{font-size:clamp(1.0625rem,1.6vw,1.25rem);color:var(--mist);max-width:58ch;margin:0 0 24px}
-  .lede strong{color:var(--fog);font-weight:500}
-  .status-chip{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.8125rem;color:var(--fog);margin:0 0 30px;padding:9px 15px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.04)}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(255,107,53,.18);flex:none}
-  .ctas{display:flex;flex-wrap:wrap;gap:12px}
-  .hero-figure{position:relative;justify-self:end;align-self:end;width:min(100%,440px)}
-  @media (max-width:900px){.hero-figure{justify-self:center;width:min(100%,360px);margin-top:8px}}
-  .hero-figure::before{content:"";position:absolute;left:50%;top:52%;width:105%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(50% 50% at 50% 50%, rgba(59,150,255,.30), rgba(59,150,255,.10) 55%, transparent 72%);filter:blur(6px)}
-  .hero-figure::after{content:"";position:absolute;left:50%;top:56%;width:124%;aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(122,175,255,.16);border-radius:50%;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 88%);mask-image:linear-gradient(180deg,#000 62%,transparent 88%)}
-  .hero-figure img{position:relative;z-index:1;display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 99%);mask-image:linear-gradient(180deg,#000 82%,transparent 99%);filter:drop-shadow(0 18px 34px rgba(3,8,18,.5))}
-  .pchip{position:absolute;left:2%;bottom:9%;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;color:var(--fog);background:rgba(7,14,28,.72);border:1px solid rgba(255,255,255,.14);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:8px 13px;border-radius:999px}
-  .pchip .dot{width:6px;height:6px;box-shadow:none}
-  @media (prefers-reduced-motion:no-preference){
-    [data-up]{opacity:0;transform:translateY(18px);animation:up .8s var(--ease) forwards;animation-delay:var(--d,0s)}
-    .hero-figure[data-up]{transform:translateY(24px) scale(.985)}
-    @keyframes up{to{opacity:1;transform:none}}
-  }
-
-  /* Ship log */
-  .log{padding-block:clamp(28px,4vw,44px) clamp(64px,8vw,100px)}
-  .log-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line-d);padding-bottom:12px}
-  .log-head h2{font-family:var(--mono);font-size:.8125rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);margin:0}
-  .log-head p{font-family:var(--mono);font-size:.75rem;color:var(--mist);margin:0}
-  .log ol{list-style:none;margin:0;padding:0}
-  .log li{display:grid;grid-template-columns:34px 148px 1fr auto auto;gap:6px 20px;align-items:baseline;padding:14px 8px;margin:0 -8px;border-bottom:1px solid var(--line-d);font-size:.9375rem;border-radius:8px;transition:background .25s ease}
-  .log li:hover{background:linear-gradient(90deg,rgba(59,150,255,.06),transparent 70%)}
-  .log .idx{font-family:var(--mono);font-size:.75rem;color:var(--mist);opacity:.8}
-  .log .time{font-family:var(--mono);font-size:.8125rem;color:var(--mist)}
-  .log .what a{color:var(--fog);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease}
-  .log .what a:hover{border-bottom-color:var(--mist)}
-  .log .what .role{color:var(--mist)}
-  .log .measure{font-family:var(--mono);font-size:.8125rem;color:var(--fog);white-space:normal;max-width:26ch;text-align:right;justify-self:end}
-  .receipt{font-family:var(--mono);font-size:.75rem;color:var(--blue);text-decoration:none;white-space:nowrap;transition:color .2s ease,transform .25s var(--ease)}
-  a.receipt{display:inline-block}
-  a.receipt:hover{text-decoration:underline;color:#6FB2FF;transform:translate(2px,-2px)}
-  .receipt.internal{color:var(--mist);cursor:default}
-  .receipt.internal:hover{text-decoration:none;color:var(--mist)}
-  @media (max-width:1000px){
-    .log li{grid-template-columns:1fr;gap:4px;padding:14px 0;margin:0;border-radius:0}
-    .log .idx{display:none}
-    .log .measure{text-align:left;max-width:none;justify-self:start}
-    .log .receipt{white-space:normal}
-  }
-  @media (prefers-reduced-motion:no-preference){
-    .log li{opacity:0;transform:translateY(8px);animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*70ms + 350ms)}
-    @keyframes rise{to{opacity:1;transform:none}}
-  }
-
-  /* Marquee (Ali "featured in" → milestones) */
-  .strip{padding:clamp(48px,6vw,64px) 0 8px}
-  .strip-label{text-align:center;font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
-  .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-  .marquee-track{display:flex;align-items:center;gap:44px;width:max-content}
-  @media (prefers-reduced-motion:no-preference){
-    .marquee-track{animation:mq 34s linear infinite}
-    .marquee:hover .marquee-track{animation-play-state:paused}
-    @keyframes mq{to{transform:translateX(-50%)}}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .marquee{mask-image:none;-webkit-mask-image:none}
-    .marquee-track{flex-wrap:wrap;justify-content:center;width:100%}
-    .mq-b{display:none}
-  }
-  .mq-item{display:flex;align-items:center;gap:44px;white-space:nowrap;font-family:var(--serif);font-weight:550;font-size:1.1rem;color:var(--ink);opacity:.8}
-  .mq-item .sep{color:var(--coral);font-size:.8rem}
-
-  /* Section scaffolding on cream */
-  .section{padding-block:var(--sp) 0}
-  .sec-head{max-width:760px;margin:0 auto 52px;text-align:center}
-  .sec-head.left{margin:0 0 44px;text-align:left;max-width:66ch}
-  .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-ink);margin:0 0 14px}
-  .kicker.warm{color:var(--warm-ink)}
-  .band-dark .kicker{color:var(--mist)}
-  .title{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4.2vw,3.1rem);letter-spacing:-.02em;line-height:1.12;margin:0 0 12px}
-  .title .acc{color:inherit}
-  .sec-head p{color:var(--muted);margin:0;font-weight:500}
-
-  /* Help cards (Ali) */
-  .help-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .help{background:var(--panel);border-radius:var(--r);padding:32px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
-  .help:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-  @media (prefers-reduced-motion:reduce){.help:hover{transform:none}}
-  .help-icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px;transition:transform .5s var(--ease)}
-  .help:hover .help-icon{transform:scale(1.1) rotate(-4deg)}
-  .help:nth-child(1) .help-icon{background:var(--blue-soft)}
-  .help:nth-child(2) .help-icon{background:var(--peach-soft)}
-  .help:nth-child(3) .help-icon{background:var(--cream)}
-  .help:nth-child(4) .help-icon{background:var(--blue-soft)}
-  .help h3{font-family:var(--serif);font-weight:600;font-size:1.26rem;letter-spacing:-.01em;margin:0}
-  .help p{margin:10px 0 0;color:var(--muted);font-size:.94rem;flex:1}
-  .help a{margin-top:18px;font-weight:700;font-size:.9rem;color:var(--blue-ink);text-decoration:none;display:inline-flex;gap:6px;align-items:center;transition:gap .3s var(--ease)}
-  .help a:hover{gap:11px}
-  @media (max-width:980px){.help-grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:560px){.help-grid{grid-template-columns:1fr}}
-
-  /* Ledger case studies */
-  .work{padding-bottom:8px}
-  .case{display:grid;grid-template-columns:250px 1fr;gap:20px 52px;padding:40px 0;border-top:1px solid var(--line);scroll-margin-top:90px}
-  .case:last-of-type{border-bottom:1px solid var(--line)}
-  .metric .n{display:block;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,4.5vw,3.6rem);letter-spacing:-.03em;line-height:1;background:linear-gradient(125deg,var(--coral-ink),var(--coral-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
-  @supports not (background-clip:text){.metric .n{color:var(--coral-ink);background:none}}
-  .metric .l{display:block;font-family:var(--mono);font-size:.8125rem;color:var(--muted);margin-top:10px;max-width:24ch;line-height:1.5}
-  .metric .receipt{display:inline-block;margin-top:14px;color:var(--blue-ink);border-bottom:1px solid currentColor;white-space:normal}
-  .metric .receipt:hover{text-decoration:none;color:var(--ink)}
-  .metric .receipt.internal{color:var(--muted);border-bottom:none}
-  .case h3{font-family:var(--serif);font-weight:600;font-size:1.5rem;letter-spacing:-.012em;margin:0 0 4px}
-  .case .ctx{font-family:var(--mono);font-size:.8125rem;color:var(--muted);margin:0 0 18px}
-  .car{display:grid;grid-template-columns:96px 1fr;gap:10px 18px;margin:0}
-  .car dt{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.4em}
-  .car dd{margin:0;color:var(--ink);max-width:66ch}
-  .car dd.result{font-weight:600}
-  @media (max-width:760px){
-    .case{grid-template-columns:1fr;gap:16px}
-    .car{grid-template-columns:1fr;gap:2px}
-    .car dt{padding-top:12px}
-  }
-
-  .more{padding-block:40px 0}
-  .more h2{font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
-  .more ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 44px}
-  .more li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9375rem}
-  .more .n{font-family:var(--mono);color:var(--ink);font-weight:500;white-space:nowrap}
-  .more a{color:var(--blue-ink);text-decoration:none;font-family:var(--mono);font-size:.75rem}
-  .more a:hover{text-decoration:underline}
-
-  /* Scroll story (Apple pinned word reveal, from v2) */
-  .scrub-wrap{height:190vh;position:relative;margin-top:var(--sp)}
-  .scrub-sticky{position:sticky;top:0;height:100vh;padding:14px}
-  .scrub-panel{height:100%;border-radius:36px;overflow:hidden;display:grid;place-items:center;padding:clamp(28px,6vw,80px);position:relative;background:
-    var(--grain),
-    radial-gradient(1100px 600px at 80% -10%, rgba(59,150,255,.25), transparent 55%),
-    radial-gradient(900px 500px at 10% 110%, rgba(255,107,53,.18), transparent 55%),
-    var(--band);
-    background-size:160px 160px,auto,auto,auto}
-  .scrub-text{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,4.2vw,3.3rem);line-height:1.32;letter-spacing:-.015em;max-width:22ch;text-align:center;margin:0}
-  .scrub-text .w{color:var(--fog);opacity:.13;transition:opacity .12s linear;will-change:opacity}
-  .scrub-text .w.acc-p{color:#FFB36B;font-style:italic}
-  .scrub-text .w.acc-b{color:#8FB4FF;font-style:italic}
-  .scrub-hint{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(234,240,249,.4)}
-  @media (prefers-reduced-motion:reduce){
-    .scrub-wrap{height:auto}
-    .scrub-sticky{position:static;height:auto}
-    .scrub-text .w{opacity:1}
-    .scrub-hint{display:none}
-  }
-
-  /* Stack */
-  .stack-panel{background:var(--panel);border-radius:var(--r);padding:clamp(26px,4vw,44px);display:grid;grid-template-columns:repeat(3,1fr);gap:32px;box-shadow:var(--shadow)}
-  .stack-panel h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:0 0 10px}
-  .stack-panel ul{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:.8125rem;color:var(--muted);line-height:1.95}
-  .stack-panel .note{grid-column:1/-1;font-family:var(--mono);font-size:.75rem;color:var(--muted);margin:0;padding-top:16px;border-top:1px solid var(--line)}
-  @media (max-width:760px){.stack-panel{grid-template-columns:1fr;gap:24px}}
-
-  /* Altechra promo tile (from v2) */
-  .alt-panel{border-radius:36px;overflow:hidden;position:relative;background:linear-gradient(120deg,#FFE9D2,#FDEDDD 45%,#FFF4E6);box-shadow:var(--shadow-lg);padding:clamp(40px,6vw,76px)}
-  .alt-panel .watermark{position:absolute;right:-1%;bottom:-9%;z-index:0;font-family:var(--display);font-weight:800;font-size:clamp(5rem,15vw,12rem);letter-spacing:-.03em;color:rgba(240,138,60,.13);user-select:none;pointer-events:none;line-height:1}
-  .alt-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:52px;align-items:center}
-  .alt-copy h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.8vw,2.8rem);letter-spacing:-.02em;line-height:1.14;margin:0}
-  .alt-copy p{margin:18px 0 0;color:#6B5A48;font-weight:500;max-width:54ch}
-  .alt-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-  .btn-dark{background:var(--ink);color:#fff;box-shadow:0 10px 26px rgba(19,35,59,.22)}
-  .btn-dark:hover{background:#1D3153}
-  .btn-warm-ghost{border-color:rgba(19,35,59,.2);color:var(--ink);background:rgba(255,255,255,.6)}
-  .btn-warm-ghost:hover{border-color:var(--ink)}
-  .alt-facts{display:grid;gap:14px}
-  .fact{background:rgba(255,255,255,.78);border-radius:18px;padding:18px 22px;display:flex;align-items:center;gap:18px;box-shadow:0 8px 24px rgba(120,72,20,.08)}
-  .fact b{font-family:var(--display);font-weight:800;font-size:1.45rem;color:var(--warm-ink);min-width:74px;letter-spacing:-.02em}
-  .fact span{color:#6B5A48;font-weight:600;font-size:.9rem}
-  @media (max-width:980px){.alt-grid{grid-template-columns:1fr;gap:36px}}
-
-  /* About */
-  .about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:52px}
-  .about-grid p{margin:0 0 16px;max-width:60ch}
-  .cert{margin:0 0 24px;background:var(--panel);border-radius:18px;padding:10px;box-shadow:var(--shadow)}
-  .cert img{display:block;width:100%;height:auto;border-radius:10px}
-  .cert figcaption{font-family:var(--mono);font-size:.72rem;color:var(--muted);padding:10px 4px 2px;line-height:1.5}
-  .facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-  .facts li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9375rem}
-  .facts .k{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.35em}
-  .facts a{color:var(--blue-ink);text-decoration:none}
-  .facts a:hover{text-decoration:underline}
-  @media (max-width:760px){.about-grid{grid-template-columns:1fr;gap:32px}}
-
-  /* Kind words */
-  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .quote{background:var(--panel);border-radius:var(--r);padding:34px 32px;box-shadow:var(--shadow);position:relative}
-  .quote::before{content:"\201C";position:absolute;top:10px;left:24px;font-family:var(--serif);font-size:4.4rem;line-height:1;color:var(--coral);opacity:.35}
-  .quote blockquote{margin:0;font-family:var(--serif);font-weight:500;font-size:1.3rem;line-height:1.45;letter-spacing:-.01em;padding-top:26px}
-  .quote figcaption{margin-top:18px;font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:1.6}
-  .quotes-note{text-align:center;font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:20px}
-  @media (max-width:760px){.quotes{grid-template-columns:1fr}}
-
-  /* Education snaps */
-  .snaps{display:flex;flex-wrap:wrap;gap:clamp(14px,2vw,24px);justify-content:center}
-  .snap{margin:0;background:var(--panel);border-radius:14px;padding:10px 10px 12px;width:clamp(180px,22vw,250px);box-shadow:var(--shadow);transform:rotate(var(--r2,0deg));transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-  .snap:hover{transform:rotate(0) translateY(-6px);box-shadow:var(--shadow-lg)}
-  @media (prefers-reduced-motion:reduce){.snap{transform:none;transition:none}.snap:hover{transform:none}}
-  .snap img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;filter:saturate(.92)}
-  .snap figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:9px;line-height:1.45}
-
-  /* Contact */
-  .contact{padding-block:var(--sp)}
-  .contact h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.4rem);letter-spacing:-.026em;line-height:1.02;margin:0 0 16px;max-width:22ch}
-  .contact h2 .acc{font-weight:550}
-  .contact p{color:var(--mist);max-width:60ch;margin:0 0 30px}
-  .mail{display:inline-block;font-family:var(--display);font-weight:700;font-size:clamp(1.35rem,3.4vw,2.4rem);color:var(--fog);text-decoration:none;border-bottom:3px solid var(--blue);letter-spacing:-.012em;word-break:break-all;transition:border-color .25s ease,color .25s ease}
-  .mail:hover{border-bottom-color:var(--coral);color:#fff}
-  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-  .footer-row{border-top:1px solid var(--line-d);padding:24px 0;font-family:var(--mono);font-size:.75rem;color:var(--mist);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -358,12 +41,12 @@
 <header class="sitenav band-dark" id="sitenav">
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="#top">Syed Zulqarnain Hassan<span class="bdot">.</span></a>
+      <a class="brand" href="/">Syed Zulqarnain Hassan<span class="bdot">.</span></a>
       <nav aria-label="Primary">
         <ul class="nav-links" id="navLinks">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#altechra">Altechra</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="/work/">Work</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -385,13 +68,13 @@
         <p class="status-chip" data-up style="--d:.26s"><span class="dot" aria-hidden="true"></span>Open to new opportunities</p>
         <div class="ctas" data-up style="--d:.34s">
           <a class="btn btn-primary" href="mailto:zulqarnainhsyed@gmail.com?subject=Hello%20Zulqarnain">Say hi</a>
-          <a class="btn btn-ghost" href="#work">See the work</a>
+          <a class="btn btn-ghost" href="/work/">See the work</a>
           <a class="btn btn-ghost" href="https://github.com/Zulqarnain-10">GitHub</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/syedzulqarnainh">LinkedIn</a>
         </div>
       </div>
       <div class="hero-figure" data-up style="--d:.2s">
-        <img src="assets/portrait-cut.webp" alt="Syed Zulqarnain Hassan" width="1054" height="1343" fetchpriority="high">
+        <img src="/assets/portrait-cut.webp" alt="Syed Zulqarnain Hassan" width="1054" height="1343" fetchpriority="high">
         <span class="pchip"><span class="dot" aria-hidden="true"></span>Graduate Achievement Award · NYIT '26</span>
       </div>
     </section>
@@ -412,21 +95,21 @@
         <li style="--i:1">
           <span class="idx" aria-hidden="true">02</span>
           <span class="time">Apr 2025–now</span>
-          <span class="what"><a href="#altechra">Altechra</a> <span class="role">· founder</span></span>
+          <span class="what"><a href="/work/#altechra">Altechra</a> <span class="role">· founder</span></span>
           <span class="measure">40+ products shipped</span>
           <a class="receipt" href="https://altechra.com">altechra.com ↗</a>
         </li>
         <li style="--i:2">
           <span class="idx" aria-hidden="true">03</span>
           <span class="time">Aug 2024–now</span>
-          <span class="what"><a href="#nsk">NSK</a> <span class="role">· petroleum wholesale operations analytics, part-time</span></span>
+          <span class="what"><a href="/work/#nsk">NSK</a> <span class="role">· petroleum wholesale operations analytics, part-time</span></span>
           <span class="measure">+15% revenue · −30% reporting time</span>
           <span class="receipt internal">internal</span>
         </li>
         <li style="--i:3">
           <span class="idx" aria-hidden="true">04</span>
           <span class="time">Jan 2025–Jun 2026</span>
-          <span class="what"><a href="#nyit">Course-scheduling study, NYIT</a> <span class="role">· Graduate Research Assistant, Data Science</span></span>
+          <span class="what"><a href="/work/#nyit">Course-scheduling study, NYIT</a> <span class="role">· Graduate Research Assistant, Data Science</span></span>
           <span class="measure">15,242 records · 3,300+ students</span>
           <span class="receipt internal">internal · methodology on request</span>
         </li>
@@ -440,14 +123,14 @@
         <li style="--i:5">
           <span class="idx" aria-hidden="true">06</span>
           <span class="time">Jun–Sep 2025</span>
-          <span class="what"><a href="#jobcraft">JobCraft</a> <span class="role">· AI job matching, open source</span></span>
+          <span class="what"><a href="/work/#jobcraft">JobCraft</a> <span class="role">· AI job matching, open source</span></span>
           <span class="measure">85% matching accuracy</span>
           <a class="receipt" href="https://github.com/Zulqarnain-10/JobCraft">GitHub ↗</a>
         </li>
         <li style="--i:6">
           <span class="idx" aria-hidden="true">07</span>
           <span class="time">Feb–May 2025</span>
-          <span class="what"><a href="#medbot">MedBot</a> <span class="role">· medical Q&amp;A assistant</span></span>
+          <span class="what"><a href="/work/#medbot">MedBot</a> <span class="role">· medical Q&amp;A assistant</span></span>
           <span class="measure">94% query accuracy</span>
           <a class="receipt" href="https://github.com/Zulqarnain-10/AI-Powered-Medical-Chatbot-Using-LLM-s-for-Smart-Healthcare-Assistance">GitHub ↗</a>
         </li>
@@ -504,147 +187,27 @@
           <span class="help-icon" aria-hidden="true">🤖</span>
           <h3>Machine learning &amp; AI</h3>
           <p>End-to-end ML — EDA and feature engineering through training, evaluation, AWS deployment, and monitoring. Models that survive contact with real data.</p>
-          <a href="#work">See the work →</a>
+          <a href="/work/">See the work →</a>
         </article>
         <article class="help fx" style="--d:.08s">
           <span class="help-icon" aria-hidden="true">🧠</span>
           <h3>LLMs &amp; RAG systems</h3>
           <p>Chatbots, semantic search, and agentic pipelines with LangChain and OpenAI — like a medical assistant answering at 94% accuracy.</p>
-          <a href="#medbot">See MedBot →</a>
+          <a href="/work/#medbot">See MedBot →</a>
         </article>
         <article class="help fx" style="--d:.16s">
           <span class="help-icon" aria-hidden="true">📊</span>
           <h3>Data analysis</h3>
           <p>Insights that move numbers — pricing and sales analysis behind a 15% revenue lift, and automated reporting that cut manual effort by 30%.</p>
-          <a href="#nsk">See where →</a>
+          <a href="/work/#nsk">See where →</a>
         </article>
         <article class="help fx" style="--d:.24s">
           <span class="help-icon" aria-hidden="true">🚀</span>
           <h3>End-to-end delivery</h3>
           <p>Full products through my agency, Altechra — 40+ SaaS platforms, AI integrations, and full-stack builds from discovery to post-launch support.</p>
-          <a href="#altechra">Meet Altechra →</a>
+          <a href="/work/#altechra">Meet Altechra →</a>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="section work wrap" id="work" aria-labelledby="work-title">
-    <div class="sec-head left fx">
-      <p class="kicker">Selected work</p>
-      <h2 class="title" id="work-title">Results first, then <span class="acc">how they happened.</span></h2>
-      <p>Five pieces of work, each written the same way: the problem, what I did, what changed. The numbers are the ones I can stand behind. Where the data is private, the receipt says so.</p>
-    </div>
-
-    <article class="case fx" id="nyit">
-      <div class="metric">
-        <span class="n" data-count>40.9%</span>
-        <span class="l">of meetings in the morning, against a 30–35% peer target</span>
-        <span class="receipt internal">internal data · methodology on request</span>
-      </div>
-      <div>
-        <h3>Course-scheduling study, NYIT</h3>
-        <p class="ctx">Graduate Research Assistant, Data Science · Jan 2025 – Jun 2026 · <span class="todo">[with Dr. Cecilia Dong — confirm ok to name]</span></p>
-        <dl class="car">
-          <dt>Challenge</dt>
-          <dd>The department needed a factual picture of how sections, meeting times, and enrollment were actually distributed across the schedule, and where that diverged from peer targets. <span class="todo">[confirm framing]</span></dd>
-          <dt>Action</dt>
-          <dd>Cleaned and reconciled 15,242 raw registrar records into 8,729 sections and 11,803 meeting instances, then defined and computed the metrics that mattered: time-of-day share, overenrollment by format, Friday load.</dd>
-          <dt>Result</dt>
-          <dd class="result">40.9% of meetings fell in the morning against a 30–35% peer target; 24.2% of lectures were overenrolled; 10.0% of meetings sat on Fridays. Scope: 3,300+ undergraduates. <span class="todo">[where the findings went / what changed — fill]</span></dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="case fx" id="altechra-case">
-      <div class="metric">
-        <span class="n" data-count>40+</span>
-        <span class="l">AI/ML and full-stack products shipped to clients</span>
-        <a class="receipt" href="https://altechra.com">altechra.com ↗</a>
-      </div>
-      <div>
-        <h3>Production AI systems, Altechra</h3>
-        <p class="ctx">Founder · Apr 2025–present · New York</p>
-        <dl class="car">
-          <dt>Challenge</dt>
-          <dd>Clients want LLM features that behave in production, not in a demo: predictable outputs, human review where the stakes are high, and evidence that the system works before it ships.</dd>
-          <dt>Action</dt>
-          <dd>Designed and shipped the systems end to end: RAG pipelines, LLM agents with human-in-the-loop review, tool calling and structured outputs, evaluation harnesses, and the full-stack products around them (Python, React, Node.js, AWS, Docker, CI/CD).</dd>
-          <dt>Result</dt>
-          <dd class="result">40+ products shipped. Two anonymized examples: a SaaS product delivered with a 98-test suite, and a system processing 600+ emails per weekday across 45 mailboxes. Client names stay private.</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="case fx" id="jobcraft">
-      <div class="metric">
-        <span class="n" data-count>85%</span>
-        <span class="l">résumé–job matching accuracy</span>
-        <a class="receipt" href="https://github.com/Zulqarnain-10/JobCraft">github.com/Zulqarnain-10/JobCraft ↗</a>
-      </div>
-      <div>
-        <h3>JobCraft</h3>
-        <p class="ctx">Personal project · Jun–Sep 2025 · open source since Aug 2026</p>
-        <dl class="car">
-          <dt>Challenge</dt>
-          <dd>Keyword search misses the real overlap between a résumé and a role, so job seekers wade through listings that were never a fit.</dd>
-          <dt>Action</dt>
-          <dd>Built a multi-agent system that reads the résumé and the posting and scores fit through semantic matching over vector embeddings with NLP scoring (Python, LangChain, OpenAI API), then containerized it on AWS EC2 with Docker and GitHub Actions CI/CD.</dd>
-          <dt>Result</dt>
-          <dd class="result">85% résumé–job matching accuracy. Released the code publicly in Aug 2026.</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="case fx" id="medbot">
-      <div class="metric">
-        <span class="n" data-count>94%</span>
-        <span class="l">query accuracy on the evaluation set</span>
-        <a class="receipt" href="https://github.com/Zulqarnain-10/AI-Powered-Medical-Chatbot-Using-LLM-s-for-Smart-Healthcare-Assistance">GitHub ↗</a>
-      </div>
-      <div>
-        <h3>MedBot</h3>
-        <p class="ctx">Personal project · Feb–May 2025</p>
-        <dl class="car">
-          <dt>Challenge</dt>
-          <dd>A medical Q&amp;A assistant that guesses is worse than none. Answers had to be grounded and measurable.</dd>
-          <dt>Action</dt>
-          <dd>Built a retrieval-grounded (RAG) medical question-answering assistant: trusted medical PDFs embedded into a Pinecone vector knowledge base with Sentence Transformers, orchestrated with LangChain, and served through a Flask app.</dd>
-          <dt>Result</dt>
-          <dd class="result">94% query accuracy on the evaluation set, scored with precision, recall, and F1.</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="case fx" id="nsk">
-      <div class="metric">
-        <span class="n" data-count>+15%</span>
-        <span class="l">revenue, with reporting time cut by 30%</span>
-        <span class="receipt internal">internal · details on request</span>
-      </div>
-      <div>
-        <h3>Operations analytics, NSK</h3>
-        <p class="ctx">Data &amp; operations analytics · part-time · Aug 2024–present · petroleum wholesale, Brooklyn</p>
-        <dl class="car">
-          <dt>Challenge</dt>
-          <dd>Pricing, sales, and day-to-day reporting were manual, so trends and problems surfaced late.</dd>
-          <dt>Action</dt>
-          <dd>Built the pricing and sales analysis layer over operations data (Python, Excel), automated the recurring reports, and turned the findings into KPIs the owners now track.</dd>
-          <dt>Result</dt>
-          <dd class="result">Pricing and sales trends contributed to a 15% revenue increase; automated reporting cut manual processing time by 30%. Ongoing.</dd>
-        </dl>
-      </div>
-    </article>
-
-    <div class="more fx">
-      <h2 id="more-title">More builds</h2>
-      <ul>
-        <li><span>Material classification · CNN over fused sensor data, PEC-funded FYP</span><span class="n">96% accuracy</span></li>
-        <li><span>Disease prediction model</span><a href="https://github.com/Zulqarnain-10/Disease-Prediction">GitHub ↗</a></li>
-        <li><span>Credit scoring model</span><a href="https://github.com/Zulqarnain-10/Credit-Scoring-Model">GitHub ↗</a></li>
-        <li><span>Handwritten character recognition</span><a href="https://github.com/Zulqarnain-10/Handwritten-Character-Recognition">GitHub ↗</a></li>
-        <li><span>Behavioral risk factor analysis, tobacco use</span><a href="https://github.com/Zulqarnain-10/Behavioral-Risk-Factor-By-Tobacco-Use">GitHub ↗</a></li>
-        <li><span>Data science mastery, exploration to prediction</span><a href="https://github.com/Zulqarnain-10/Data-Science-Mastery---From-Exploration-to-Prediction">GitHub ↗</a></li>
-      </ul>
     </div>
   </section>
 
@@ -657,141 +220,7 @@
     </div>
   </section>
 
-  <section class="section" id="stack" aria-labelledby="stack-title">
-    <div class="wrap">
-      <div class="sec-head fx">
-        <p class="kicker">Stack</p>
-        <h2 class="title" id="stack-title">What I <span class="acc">work with</span></h2>
-      </div>
-      <div class="stack-panel fx">
-        <div>
-          <h3>Analysis &amp; modeling</h3>
-          <ul>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>PyTorch</li>
-            <li>scikit-learn · pandas</li>
-            <li>Statistics</li>
-          </ul>
-        </div>
-        <div>
-          <h3>LLM systems</h3>
-          <ul>
-            <li>RAG · LangChain · LangGraph</li>
-            <li>Hugging Face</li>
-            <li>Tool calling · structured outputs</li>
-            <li>Evaluation harnesses</li>
-            <li>Human-in-the-loop review</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Shipping</h3>
-          <ul>
-            <li>AWS · Docker</li>
-            <li>CI/CD · Git</li>
-            <li>Flask · Streamlit</li>
-            <li>React · Node.js</li>
-          </ul>
-        </div>
-        <p class="note">Listed only what I have used on shipped work. <span class="todo">[A/B testing, causal inference, forecasting, Power BI, MLflow/DVC, SageMaker: add here only after the matching gap project ships — see 04-gap-project-plan]</span></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="altechra" aria-labelledby="altechra-title">
-    <div class="wrap">
-      <div class="alt-panel fx">
-        <span class="watermark" aria-hidden="true">ALTECHRA</span>
-        <div class="alt-grid">
-          <div class="alt-copy">
-            <p class="kicker warm">Founder &amp; CEO</p>
-            <h2 id="altechra-title">I also run an agency — meet <span class="acc">Altechra.</span></h2>
-            <p>I founded Altechra to bridge clients with world-class engineering talent. We have delivered 40+ products — SaaS platforms, AI systems, fintech and mobile apps — with me leading discovery, architecture, and delivery end to end.</p>
-            <p style="margin-top:12px">It's where my data science meets the real world: scoping ambiguous problems, managing teams, and being accountable for outcomes, not just models.</p>
-            <div class="alt-cta">
-              <a class="btn btn-dark" href="https://altechra.com">Visit Altechra ↗</a>
-              <a class="btn btn-warm-ghost" href="mailto:zulqarnainhsyed@gmail.com?subject=Project%20inquiry">Start a project</a>
-            </div>
-          </div>
-          <div class="alt-facts">
-            <div class="fact"><b>40+</b><span>products delivered across web, mobile &amp; AI</span></div>
-            <div class="fact"><b>E2E</b><span>discovery → architecture → deployment → support</span></div>
-            <div class="fact"><b>5★</b><span>Upwork-verified client reviews on altechra.com</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section wrap" id="about" aria-labelledby="about-title">
-    <div class="sec-head left fx">
-      <p class="kicker">About</p>
-      <h2 class="title" id="about-title">Rigor from research, delivery from <span class="acc">running a shop.</span></h2>
-    </div>
-    <div class="about-grid">
-      <div class="fx">
-        <p>I'm Syed Zulqarnain Hassan, a data scientist and ML engineer. I finished my MS in Data Science at NYIT in May 2026, where I received the Data Science Graduate Achievement Award at the CoECS Commencement Awards Ceremony and worked as a Graduate Research Assistant on LLM and semantic-search research and a course-scheduling study covering 3,300+ undergraduates.</p>
-        <p>Alongside school I built Altechra into a shop that has shipped 40+ AI/ML and full-stack products for clients, and I hold Top Rated status on Upwork across 38+ contracts. I also run the data and operations analytics for NSK, a petroleum wholesale business in Brooklyn, part-time.</p>
-        <p>Away from the keyboard: football (Manchester United, for better or worse), and family. Every milestone on this page belongs to my parents first — they stood up for my education when it wasn't easy.</p>
-        <p>If a full-time Data Scientist, Data Analyst, Machine Learning Engineer, or AI Engineer role is why you're here: I'm a U.S. citizen, no sponsorship needed, open to any U.S. location — on-site, hybrid, or remote.</p>
-      </div>
-      <div class="fx" style="--d:.12s">
-        <figure class="cert">
-          <img src="assets/award-certificate.webp" alt="Data Science Graduate Achievement Award certificate, New York Institute of Technology" loading="lazy">
-          <figcaption>Data Science Graduate Achievement Award · NYIT CoECS · May 2026</figcaption>
-        </figure>
-        <ul class="facts">
-          <li><span class="k">Location</span><span>Open to all U.S. locations · currently New York</span></li>
-          <li><span class="k">Status</span><span>Available now · U.S. citizen · no sponsorship needed</span></li>
-          <li><span class="k">Education</span><span>MS Data Science, NYIT, May 2026 · Data Science Graduate Achievement Award<br>BS Electrical Engineering, FAST-NUCES Lahore, 2024 <span class="todo">[confirm: keep BS line?]</span></span></li>
-          <li><span class="k">Elsewhere</span><span><a href="https://www.linkedin.com/in/syedzulqarnainh">LinkedIn</a> · <a href="https://github.com/Zulqarnain-10">GitHub</a> · <a href="https://www.upwork.com/freelancers/~01bd0c312572d26561">Upwork</a> · <a href="https://altechra.com">Altechra</a></span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="words-title">
-    <div class="wrap">
-      <div class="sec-head fx">
-        <p class="kicker">Kind words</p>
-        <h2 class="title" id="words-title">What people <span class="acc">say.</span></h2>
-      </div>
-      <div class="quotes">
-        <figure class="quote fx">
-          <blockquote>He'll be the best candidate you ever meet.</blockquote>
-          <figcaption>Yan Li · Applied Data Scientist, PhD Neuroscience · graduate coursework teammate at NYIT</figcaption>
-        </figure>
-        <figure class="quote fx" style="--d:.1s">
-          <blockquote>I believe he'll be a valuable asset to any team.</blockquote>
-          <figcaption>Muhammad Talha · Senior AI R&amp;D Engineer, Aerodyne Group</figcaption>
-        </figure>
-      </div>
-      <p class="quotes-note fx">Both from my LinkedIn recommendations — full text on my profile.</p>
-    </div>
-  </section>
-
-  <section class="section wrap" aria-labelledby="moments-title" style="padding-bottom:var(--sp)">
-    <div class="sec-head fx">
-      <p class="kicker">Education</p>
-      <h2 class="title" id="moments-title">From Lahore to <span class="acc">New York.</span></h2>
-    </div>
-    <div class="snaps">
-      <figure class="snap fx" style="--r2:-2deg;--d:0s">
-        <img src="assets/nyit-commencement.webp" alt="Zulqarnain in regalia beside the New York Institute of Technology banner at commencement" loading="lazy">
-        <figcaption>MS Data Science · NYIT, Class of 2026</figcaption>
-      </figure>
-      <figure class="snap fx" style="--r2:1.5deg;--d:.08s">
-        <img src="assets/nyc-skyline.webp" alt="New York Institute of Technology building at Columbus Circle, New York City" loading="lazy">
-        <figcaption>NYIT · New York City</figcaption>
-      </figure>
-      <figure class="snap fx" style="--r2:-1.4deg;--d:.16s">
-        <img src="assets/fast-campus.webp" alt="FAST-NUCES campus, Lahore" loading="lazy">
-        <figcaption>BS Electrical Engineering · FAST-NUCES, Lahore</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <div class="band-dark band-contact">
+  <div class="band-dark band-contact" style="margin-top:var(--sp)">
     <section class="contact wrap" id="contact" aria-labelledby="contact-title">
       <div class="fx">
         <p class="kicker">Contact</p>
@@ -811,118 +240,52 @@
 
 <footer class="band-dark band-foot">
   <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-id">
+        <a class="brand" href="/">Syed Zulqarnain Hassan<span class="bdot">.</span></a>
+        <p class="foot-tag">Data scientist with a shipping record.</p>
+        <div class="foot-social">
+          <a href="https://www.linkedin.com/in/syedzulqarnainh" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://github.com/Zulqarnain-10" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          <a href="https://x.com/szulqarnain22" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+          <a href="https://www.instagram.com/szulqarnain22" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.2"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r=".4" style="fill:currentColor;stroke-width:1.4"/></svg></a>
+          <a href="mailto:zulqarnainhsyed@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="M3.5 7.5 12 13.2 20.5 7.5"/></svg></a>
+        </div>
+      </div>
+      <nav class="foot-col" aria-label="Site">
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/work/">Work</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="#contact">Say hi</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="Work">
+        <h3>Work</h3>
+        <ul>
+          <li><a href="/work/#jobcraft">JobCraft</a></li>
+          <li><a href="/work/#medbot">MedBot</a></li>
+          <li><a href="/work/#nyit">NYIT study</a></li>
+          <li><a href="/work/#altechra">Altechra</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="Elsewhere">
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://www.upwork.com/freelancers/~01bd0c312572d26561">Upwork</a></li>
+          <li><a href="https://altechra.com">altechra.com</a></li>
+          <li><a href="https://www.instagram.com/szulqarnain22">Instagram</a></li>
+          <li><a href="https://x.com/szulqarnain22">X (Twitter)</a></li>
+          <li><a href="/resume.pdf">Résumé (PDF)</a></li>
+        </ul>
+      </nav>
+    </div>
     <div class="footer-row">
       <span>© 2026 Syed Zulqarnain Hassan · made with ☕ in New York</span>
-      <span>Numbers on this page are as of Aug 2026</span>
+      <span>Numbers on this site are as of Aug 2026</span>
     </div>
   </div>
 </footer>
-
-<script>
-(() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const nav = document.getElementById('sitenav');
-  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 8);
-  addEventListener('scroll', onScroll, {passive: true});
-  onScroll();
-
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  menuBtn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  navLinks.addEventListener('click', e => {
-    if (e.target.tagName === 'A') { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
-  });
-
-  // split the story statement into words (works with or without motion)
-  const scrubText = document.getElementById('scrubText');
-  const words = [];
-  {
-    const nodes = Array.from(scrubText.childNodes);
-    scrubText.textContent = '';
-    nodes.forEach(node => {
-      const acc = node.nodeType === 1 ? node.getAttribute('data-acc') : null;
-      (node.textContent || '').split(/\s+/).forEach(wd => {
-        if (!wd) return;
-        const s = document.createElement('span');
-        s.className = 'w' + (acc === 'p' ? ' acc-p' : acc === 'b' ? ' acc-b' : '');
-        s.textContent = wd;
-        scrubText.appendChild(s);
-        scrubText.appendChild(document.createTextNode(' '));
-        words.push(s);
-      });
-    });
-  }
-
-  if (reduce || !('IntersectionObserver' in window)) {
-    words.forEach(w => { w.style.opacity = '1'; });
-    return;
-  }
-  document.documentElement.classList.add('js');
-
-  const io = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), {threshold: .12, rootMargin: '0px 0px -8% 0px'});
-  document.querySelectorAll('.fx').forEach(el => io.observe(el));
-
-  const fmt = (n, dec) => n.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec});
-  const animate = el => {
-    const final = el.dataset.final;
-    const m = final.match(/^([^0-9]*)([\d,.]+)(.*)$/);
-    if (!m) { el.textContent = final; return; }
-    const target = parseFloat(m[2].replace(/,/g, ''));
-    const dec = (m[2].split('.')[1] || '').length;
-    const t0 = performance.now(), dur = 1100;
-    const step = t => {
-      const p = Math.min(1, (t - t0) / dur);
-      const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = m[1] + fmt(target * eased, dec) + m[3];
-      if (p < 1) requestAnimationFrame(step); else el.textContent = final;
-    };
-    requestAnimationFrame(step);
-  };
-  const cio = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting) { animate(e.target); cio.unobserve(e.target); }
-  }), {threshold: .6});
-  document.querySelectorAll('[data-count]').forEach(el => {
-    el.dataset.final = el.textContent;
-    cio.observe(el);
-  });
-
-  // hero figure parallax + pinned word scrub, one rAF loop
-  const fig = document.querySelector('.hero-figure');
-  const scrubWrap = document.getElementById('story');
-  const progress = document.getElementById('progress');
-  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-  let ticking = false;
-  const apply = () => {
-    ticking = false;
-    if (fig) fig.style.transform = 'translateY(' + Math.min(48, scrollY * 0.07).toFixed(1) + 'px)';
-    if (progress) progress.style.transform = 'scaleX(' + clamp(scrollY / (document.documentElement.scrollHeight - innerHeight), 0, 1).toFixed(4) + ')';
-    const vh = innerHeight;
-    const rect = scrubWrap.getBoundingClientRect();
-    const total = scrubWrap.offsetHeight - vh;
-    if (total > 0) {
-      const p = clamp(-rect.top / total, 0, 1);
-      const n = words.length;
-      for (let i = 0; i < n; i++) {
-        const start = (i / n) * 0.68;
-        words[i].style.opacity = String(0.13 + 0.87 * clamp((p - start) / 0.16, 0, 1));
-      }
-    }
-  };
-  const schedule = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(apply);
-    setTimeout(() => { ticking = false; }, 150); // rAF pauses in hidden tabs; don't let the throttle stick
-  };
-  addEventListener('scroll', schedule, {passive: true});
-  addEventListener('resize', schedule);
-  apply();
-})();
-</script>
 </body>
 </html>
