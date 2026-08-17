@@ -65,6 +65,13 @@
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
   .skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:8px 12px;z-index:100;font-family:var(--mono);font-size:.8125rem}
   .skip:focus{left:8px}
+  .progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,var(--blue),var(--coral));transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+  @media (prefers-reduced-motion:reduce){.progress{display:none}}
+  html{scrollbar-width:thin;scrollbar-color:#2A4A7A var(--bg)}
+  ::-webkit-scrollbar{width:11px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:#2A4A7A;border-radius:8px;border:3px solid var(--bg)}
+  ::-webkit-scrollbar-thumb:hover{background:var(--blue-ink)}
   .todo{background:rgba(255,107,53,.14);color:var(--coral-ink);padding:0 5px;border-radius:4px;font-family:var(--mono);font-size:.85em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
   .band-dark{background:var(--band);color:var(--fog)}
   .band-dark .todo{color:var(--coral)}
@@ -163,8 +170,9 @@
   .log .what a:hover{border-bottom-color:var(--mist)}
   .log .what .role{color:var(--mist)}
   .log .measure{font-family:var(--mono);font-size:.8125rem;color:var(--fog);white-space:normal;max-width:26ch;text-align:right;justify-self:end}
-  .receipt{font-family:var(--mono);font-size:.75rem;color:var(--blue);text-decoration:none;white-space:nowrap;transition:color .2s ease}
-  .receipt:hover{text-decoration:underline;color:#6FB2FF}
+  .receipt{font-family:var(--mono);font-size:.75rem;color:var(--blue);text-decoration:none;white-space:nowrap;transition:color .2s ease,transform .25s var(--ease)}
+  a.receipt{display:inline-block}
+  a.receipt:hover{text-decoration:underline;color:#6FB2FF;transform:translate(2px,-2px)}
   .receipt.internal{color:var(--mist);cursor:default}
   .receipt.internal:hover{text-decoration:none;color:var(--mist)}
   @media (max-width:1000px){
@@ -212,7 +220,8 @@
   .help{background:var(--panel);border-radius:var(--r);padding:32px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
   .help:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
   @media (prefers-reduced-motion:reduce){.help:hover{transform:none}}
-  .help-icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px}
+  .help-icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px;transition:transform .5s var(--ease)}
+  .help:hover .help-icon{transform:scale(1.1) rotate(-4deg)}
   .help:nth-child(1) .help-icon{background:var(--blue-soft)}
   .help:nth-child(2) .help-icon{background:var(--peach-soft)}
   .help:nth-child(3) .help-icon{background:var(--cream)}
@@ -255,7 +264,7 @@
   .more a:hover{text-decoration:underline}
 
   /* Scroll story (Apple pinned word reveal, from v2) */
-  .scrub-wrap{height:300vh;position:relative;margin-top:var(--sp)}
+  .scrub-wrap{height:190vh;position:relative;margin-top:var(--sp)}
   .scrub-sticky{position:sticky;top:0;height:100vh;padding:14px}
   .scrub-panel{height:100%;border-radius:36px;overflow:hidden;display:grid;place-items:center;padding:clamp(28px,6vw,80px);position:relative;background:
     var(--grain),
@@ -342,6 +351,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="sitenav band-dark" id="sitenav">
   <div class="wrap">
@@ -882,11 +892,13 @@
   // hero figure parallax + pinned word scrub, one rAF loop
   const fig = document.querySelector('.hero-figure');
   const scrubWrap = document.getElementById('story');
+  const progress = document.getElementById('progress');
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   let ticking = false;
   const apply = () => {
     ticking = false;
     if (fig) fig.style.transform = 'translateY(' + Math.min(48, scrollY * 0.07).toFixed(1) + 'px)';
+    if (progress) progress.style.transform = 'scaleX(' + clamp(scrollY / (document.documentElement.scrollHeight - innerHeight), 0, 1).toFixed(4) + ')';
     const vh = innerHeight;
     const rect = scrubWrap.getBoundingClientRect();
     const total = scrubWrap.offsetHeight - vh;
@@ -894,13 +906,19 @@
       const p = clamp(-rect.top / total, 0, 1);
       const n = words.length;
       for (let i = 0; i < n; i++) {
-        const start = (i / n) * 0.82;
-        words[i].style.opacity = String(0.13 + 0.87 * clamp((p - start) / 0.10, 0, 1));
+        const start = (i / n) * 0.68;
+        words[i].style.opacity = String(0.13 + 0.87 * clamp((p - start) / 0.16, 0, 1));
       }
     }
   };
-  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(apply); } }, {passive: true});
-  addEventListener('resize', () => { if (!ticking) { ticking = true; requestAnimationFrame(apply); } });
+  const schedule = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(apply);
+    setTimeout(() => { ticking = false; }, 150); // rAF pauses in hidden tabs; don't let the throttle stick
+  };
+  addEventListener('scroll', schedule, {passive: true});
+  addEventListener('resize', schedule);
   apply();
 })();
 </script>
