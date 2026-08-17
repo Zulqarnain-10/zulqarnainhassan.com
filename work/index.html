@@ -14,9 +14,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/bricolage-grotesque-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic-400-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <script src="/main.js" defer></script>
 </head>
@@ -70,6 +70,25 @@
           <dt>Result</dt>
           <dd class="result">40.9% of meetings fell in the morning against a 30–35% peer target; 24.2% of lectures were overenrolled; 10.0% of meetings sat on Fridays. Scope: 3,300+ undergraduates. <span class="todo">[where the findings went / what changed — fill]</span></dd>
         </dl>
+        <figure class="case-chart">
+          <svg viewBox="0 0 560 172" role="img" aria-label="Bar chart: 40.9 percent of meetings in the morning against a 30 to 35 percent peer target; 24.2 percent of lectures overenrolled; 10 percent of meetings on Fridays">
+            <text x="0" y="10" font-size="10" letter-spacing="1" fill="#5B6B80">MORNING MEETINGS</text>
+            <rect x="0" y="18" width="520" height="20" rx="4" fill="rgba(19,35,59,.06)"/>
+            <rect x="0" y="18" width="473" height="20" rx="4" fill="#D9480F"/>
+            <rect x="347" y="14" width="58" height="28" fill="none" stroke="#13233B" stroke-opacity=".4" stroke-dasharray="3 3"/>
+            <text x="376" y="56" font-size="9" fill="#5B6B80" text-anchor="middle">target 30–35%</text>
+            <text x="481" y="33" font-size="12" font-weight="bold" fill="#13233B">40.9%</text>
+            <text x="0" y="80" font-size="10" letter-spacing="1" fill="#5B6B80">OVERENROLLED LECTURES</text>
+            <rect x="0" y="88" width="520" height="20" rx="4" fill="rgba(19,35,59,.06)"/>
+            <rect x="0" y="88" width="280" height="20" rx="4" fill="#1560D6"/>
+            <text x="288" y="103" font-size="12" font-weight="bold" fill="#13233B">24.2%</text>
+            <text x="0" y="136" font-size="10" letter-spacing="1" fill="#5B6B80">FRIDAY MEETINGS</text>
+            <rect x="0" y="144" width="520" height="20" rx="4" fill="rgba(19,35,59,.06)"/>
+            <rect x="0" y="144" width="116" height="20" rx="4" fill="#1560D6" fill-opacity=".55"/>
+            <text x="124" y="159" font-size="12" font-weight="bold" fill="#13233B">10.0%</text>
+          </svg>
+          <figcaption>Share of class meetings — 15,242 registrar records, 8,729 sections. Bars scaled to a 45% axis.</figcaption>
+        </figure>
       </div>
     </article>
 
@@ -156,7 +175,7 @@
     <div class="more fx">
       <h2 id="more-title">More builds</h2>
       <ul>
-        <li><span>Material classification · CNN over fused sensor data, PEC-funded FYP</span><span class="n">96% accuracy</span></li>
+        <li><span>Material classification · CNN over fused sensor data, PEC-funded FYP</span><span class="n">96% accuracy</span><a href="https://github.com/Zulqarnain-10/Advanced-Material-Classification-Using-Sensor-Fusion-Machine-Learning">GitHub ↗</a></li>
         <li><span>Disease prediction model</span><a href="https://github.com/Zulqarnain-10/Disease-Prediction">GitHub ↗</a></li>
         <li><span>Credit scoring model</span><a href="https://github.com/Zulqarnain-10/Credit-Scoring-Model">GitHub ↗</a></li>
         <li><span>Handwritten character recognition</span><a href="https://github.com/Zulqarnain-10/Handwritten-Character-Recognition">GitHub ↗</a></li>
@@ -279,7 +298,7 @@
           <li><a href="/work/#jobcraft">JobCraft</a></li>
           <li><a href="/work/#medbot">MedBot</a></li>
           <li><a href="/work/#nyit">NYIT study</a></li>
-          <li><a href="/work/#altechra">Altechra</a></li>
+          <li><a href="/work/#altechra-case">Altechra</a></li>
         </ul>
       </nav>
       <nav class="foot-col" aria-label="Elsewhere">
