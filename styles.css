@@ -400,8 +400,17 @@ a.receipt:hover{text-decoration:underline;color:var(--coral);transform:translate
 .moment{break-inside:avoid;margin:0 0 14px;background:var(--panel);border-radius:14px;padding:8px 8px 10px;box-shadow:var(--shadow);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
 .moment:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 @media (prefers-reduced-motion:reduce){.moment:hover{transform:none}}
-.moment img{width:100%;height:auto;border-radius:8px;display:block}
+.moment img{width:100%;height:auto;border-radius:8px;display:block;cursor:zoom-in}
 .moment figcaption{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:8px;line-height:1.5}
+
+/* photo lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(7,14,28,.93);display:none;place-items:center;padding:clamp(16px,4vw,56px)}
+.lb.on{display:grid}
+.lb>img{max-width:100%;max-height:calc(100vh - 110px);width:auto;border-radius:10px;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.lb-cap{position:absolute;bottom:16px;left:16px;right:16px;text-align:center;font-family:var(--mono);font-size:.78rem;color:var(--mist);margin:0}
+.lb-x{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--fog);font-size:1.05rem;cursor:pointer;display:grid;place-items:center;transition:border-color .2s ease,color .2s ease,transform .3s var(--ease)}
+.lb-x:hover{border-color:var(--coral);color:var(--coral);transform:rotate(90deg)}
+@media (prefers-reduced-motion:reduce){.lb-x:hover{transform:none}}
 
 /* home teaser quote strip */
 .quote-strip{text-align:center;padding-block:var(--sp) 0}
@@ -483,7 +492,7 @@ h2[id],section[id]{scroll-margin-top:96px}
 .edu{background:var(--panel);border-radius:var(--r);padding:0;overflow:hidden;box-shadow:var(--shadow);transition:transform .5s var(--ease),box-shadow .5s var(--ease);display:flex;flex-direction:column}
 .edu:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 @media (prefers-reduced-motion:reduce){.edu:hover{transform:none}}
-.edu-img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.edu-img{width:100%;aspect-ratio:5/4;object-fit:cover;display:block;transition:transform .6s var(--ease)}
 .edu:hover .edu-img{transform:scale(1.04)}
 @media (prefers-reduced-motion:reduce){.edu:hover .edu-img{transform:none}}
 .edu-body{padding:26px 30px 30px}

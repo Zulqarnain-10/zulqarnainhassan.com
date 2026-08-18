@@ -83,6 +83,46 @@
     });
   }
 
+  // moments photo lightbox (about page only)
+  const momentImgs = document.querySelectorAll('.moment img');
+  if (momentImgs.length) {
+    const lb = document.createElement('div');
+    lb.className = 'lb';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Photo viewer');
+    lb.innerHTML = '<img alt=""><p class="lb-cap"></p><button class="lb-x" type="button" aria-label="Close photo">✕</button>';
+    document.body.appendChild(lb);
+    const im = lb.querySelector('img');
+    const cap = lb.querySelector('.lb-cap');
+    const x = lb.querySelector('.lb-x');
+    let last = null;
+    const close = () => {
+      lb.classList.remove('on');
+      document.body.style.overflow = '';
+      if (last) last.focus();
+    };
+    const open = t => {
+      im.src = t.src;
+      im.alt = t.alt;
+      const fc = t.closest('.moment').querySelector('figcaption');
+      cap.textContent = fc ? fc.textContent : '';
+      lb.classList.add('on');
+      document.body.style.overflow = 'hidden';
+      last = t;
+      x.focus();
+    };
+    momentImgs.forEach(m => {
+      m.setAttribute('tabindex', '0');
+      m.setAttribute('role', 'button');
+      m.addEventListener('click', () => open(m));
+      m.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(m); } });
+    });
+    x.addEventListener('click', close);
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('on')) close(); });
+  }
+
   // split the story statement into words (home page only)
   const scrubText = document.getElementById('scrubText');
   const words = [];
