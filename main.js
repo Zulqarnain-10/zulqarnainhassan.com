@@ -120,7 +120,11 @@
     });
     x.addEventListener('click', close);
     lb.addEventListener('click', e => { if (e.target === lb) close(); });
-    addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('on')) close(); });
+    addEventListener('keydown', e => {
+      if (!lb.classList.contains('on')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'Tab') { e.preventDefault(); x.focus(); } // the close button is the dialog's only stop
+    });
   }
 
   // split the story statement into words (home page only)
