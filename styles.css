@@ -317,7 +317,7 @@ a.receipt:hover{text-decoration:underline;color:var(--coral);transform:translate
   box-shadow:var(--shadow-lg);padding:clamp(40px,6vw,76px)}
 .alt-panel .watermark{position:absolute;right:-1%;bottom:-9%;z-index:0;font-family:var(--display);font-weight:800;font-size:clamp(5rem,15vw,12rem);letter-spacing:-.03em;color:rgba(139,92,246,.1);user-select:none;pointer-events:none;line-height:1}
 .alt-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:52px;align-items:center}
-.alt-logo{width:74px;height:auto;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:19px;padding:13px;margin-bottom:20px;display:block;transition:transform .5s var(--ease)}
+.alt-logo{width:74px;height:74px;background:#fff;border:1px solid rgba(255,255,255,.2);border-radius:19px;padding:6px;margin-bottom:20px;display:block;box-shadow:0 8px 24px rgba(3,8,18,.4);transition:transform .5s var(--ease)}
 .alt-panel:hover .alt-logo{transform:translateY(-3px) rotate(-3deg)}
 .alt-panel .kicker.warm{color:#A78BFA}
 .alt-copy h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.8vw,2.8rem);letter-spacing:-.02em;line-height:1.14;margin:0}
