@@ -25,6 +25,52 @@
     });
   }
 
+  // rotating recommendations (about page only)
+  const rotator = document.getElementById('quoteRotator');
+  if (rotator) {
+    const slides = Array.from(rotator.querySelectorAll('.pull-slide'));
+    const dots = Array.from(rotator.querySelectorAll('.pull-dots button'));
+    let cur = 0, timer = null;
+    const show = i => {
+      cur = i;
+      slides.forEach((s, k) => s.classList.toggle('is-on', k === i));
+      dots.forEach((d, k) => d.setAttribute('aria-selected', k === i ? 'true' : 'false'));
+    };
+    const arm = () => {
+      if (reduce) return;
+      clearInterval(timer);
+      timer = setInterval(() => show((cur + 1) % slides.length), 6500);
+    };
+    dots.forEach((d, i) => d.addEventListener('click', () => { show(i); arm(); }));
+    rotator.addEventListener('mouseenter', () => clearInterval(timer));
+    rotator.addEventListener('mouseleave', arm);
+    arm();
+  }
+
+  // copy email (contact page only)
+  const copyBtn = document.getElementById('copyEmail');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const email = 'zulqarnainhsyed@gmail.com';
+      const done = () => {
+        copyBtn.classList.add('copied');
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.textContent = 'Copy email'; }, 2200);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        done();
+      }
+    });
+  }
+
   // split the story statement into words (home page only)
   const scrubText = document.getElementById('scrubText');
   const words = [];
