@@ -369,6 +369,60 @@ a.receipt:hover{text-decoration:underline;color:#6FB2FF;transform:translate(2px,
 @media (max-width:560px){.foot-grid{grid-template-columns:1fr}}
 .footer-row{border-top:1px solid var(--line-d);padding:24px 0;font-size:.82rem;font-weight:500;color:var(--mist);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
 
+/* build cards (More builds) */
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.bcard{background:var(--panel);border-radius:18px;padding:24px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.bcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+@media (prefers-reduced-motion:reduce){.bcard:hover{transform:none}}
+.bcard.featured{grid-column:1/-1;flex-direction:row;align-items:center;gap:clamp(20px,4vw,44px);padding:clamp(24px,3.5vw,36px);background:linear-gradient(120deg,#fff 58%,var(--peach-soft))}
+.bcard.featured .bmain{flex:1}
+.bcard.featured .bside{text-align:right;flex:none}
+.bcard.featured .bside .n{display:block;font-family:var(--display);font-weight:800;font-size:clamp(2rem,3.6vw,2.9rem);letter-spacing:-.03em;line-height:1;color:var(--coral-ink)}
+.bcard.featured .bside .l{display:block;font-size:.82rem;font-weight:500;color:var(--muted);margin-top:6px;max-width:20ch}
+.btag{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.bcard h3{font-family:var(--serif);font-weight:600;font-size:1.18rem;letter-spacing:-.01em;margin:0}
+.bcard p{margin:8px 0 0;color:var(--muted);font-size:.9rem;flex:1}
+.bcard .receipt{margin-top:16px;color:var(--blue-ink)}
+.bcard.featured .bside .receipt{display:inline-block}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--ink);background:var(--cream);border-radius:999px;padding:5px 12px}
+@media (max-width:980px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.bgrid{grid-template-columns:1fr}.bcard.featured{flex-direction:column;align-items:flex-start}.bcard.featured .bside{text-align:left}}
+
+/* experience rows (Where I've worked) */
+.xp{background:var(--panel);border-radius:calc(var(--r) + 4px);box-shadow:var(--shadow);overflow:hidden}
+.xp-row{display:grid;grid-template-columns:190px 1fr;gap:8px 30px;padding:30px 34px;border-top:1px solid var(--line);transition:background .3s ease}
+.xp-row:first-child{border-top:none}
+.xp-row:hover{background:#FDFBF6}
+.xp-when{font-family:var(--mono);font-size:.8125rem;color:var(--muted);padding-top:4px;display:flex;align-items:flex-start;gap:10px}
+.xdot{width:9px;height:9px;border-radius:50%;margin-top:7px;flex:none}
+.xdot.b{background:var(--blue-ink)}
+.xdot.c{background:var(--coral)}
+.xp-body h3{font-family:var(--serif);font-weight:600;font-size:1.24rem;letter-spacing:-.01em;margin:0}
+.xp-org{color:var(--muted);font-weight:500;font-size:.95em}
+.xp-body p{margin:8px 0 0;color:var(--muted);font-size:.94rem;max-width:64ch}
+.xp-body .receipt{display:inline-block;margin-top:12px;color:var(--blue-ink)}
+.xkey{white-space:nowrap;font-weight:600;color:var(--ink)}
+.xkey .xdot{display:inline-block;margin:0 5px 0 0;vertical-align:0}
+@media (max-width:760px){.xp-row{grid-template-columns:1fr;gap:6px;padding:24px 22px}}
+
+/* education cards (Where I studied) */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:clamp(40px,6vw,60px)}
+.edu{background:var(--panel);border-radius:var(--r);padding:32px 30px;box-shadow:var(--shadow);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.edu:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+@media (prefers-reduced-motion:reduce){.edu:hover{transform:none}}
+.edu-when{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.edu h3{font-family:var(--serif);font-weight:600;font-size:1.4rem;letter-spacing:-.012em;margin:12px 0 0}
+.edu .school{margin:4px 0 0;color:var(--muted);font-weight:500;font-size:.94rem}
+.badge{display:inline-block;margin-top:16px;padding:7px 15px;border-radius:999px;font-weight:700;font-size:.8rem}
+.badge.p{background:var(--peach-soft);color:var(--coral-deep)}
+.badge.b{background:var(--blue-soft);color:var(--blue-ink)}
+.edu ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:7px}
+.edu ul li{color:var(--muted);font-weight:500;font-size:.9rem;padding-left:20px;position:relative}
+.edu ul li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--coral-ink)}
+.snaps-label{text-align:center;font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
+@media (max-width:760px){.edu-grid{grid-template-columns:1fr}}
+
 /* case chart */
 .case-chart{margin:22px 0 0}
 .case-chart svg{width:100%;max-width:560px;height:auto;display:block}
