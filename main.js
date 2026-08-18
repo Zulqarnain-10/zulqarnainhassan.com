@@ -23,7 +23,14 @@
     addEventListener('keydown', e => {
       if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu(true);
     });
+    addEventListener('pointerdown', e => {
+      if (nav.classList.contains('open') && !nav.contains(e.target)) closeMenu(false);
+    });
   }
+
+  // pause the marquee on tap (hover and focus are handled in CSS)
+  const marquee = document.querySelector('.marquee');
+  if (marquee) marquee.addEventListener('touchstart', () => marquee.classList.toggle('paused'), {passive: true});
 
   // rotating recommendations (about page only)
   const rotator = document.getElementById('quoteRotator');
@@ -34,7 +41,7 @@
     const show = i => {
       cur = i;
       slides.forEach((s, k) => s.classList.toggle('is-on', k === i));
-      dots.forEach((d, k) => d.setAttribute('aria-selected', k === i ? 'true' : 'false'));
+      dots.forEach((d, k) => d.setAttribute('aria-pressed', k === i ? 'true' : 'false'));
     };
     const arm = () => {
       if (reduce) return;
@@ -44,6 +51,8 @@
     dots.forEach((d, i) => d.addEventListener('click', () => { show(i); arm(); }));
     rotator.addEventListener('mouseenter', () => clearInterval(timer));
     rotator.addEventListener('mouseleave', arm);
+    rotator.addEventListener('focusin', () => clearInterval(timer));
+    rotator.addEventListener('focusout', arm);
     arm();
   }
 
@@ -57,9 +66,7 @@
         copyBtn.textContent = 'Copied';
         setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.textContent = 'Copy email'; }, 2200);
       };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(done);
-      } else {
+      const legacy = () => {
         const ta = document.createElement('textarea');
         ta.value = email;
         document.body.appendChild(ta);
@@ -67,6 +74,11 @@
         document.execCommand('copy');
         ta.remove();
         done();
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done).catch(legacy);
+      } else {
+        legacy();
       }
     });
   }
