@@ -33,11 +33,11 @@
           <li><a href="/">Home</a></li>
           <li><a href="/work/">Work</a></li>
           <li><a href="/about/" aria-current="page">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-right">
-        <a class="btn btn-primary nav-cta" href="mailto:zulqarnainhsyed@gmail.com?subject=Hello%20Zulqarnain">Email me</a>
+        <a class="btn btn-primary nav-cta" href="/contact/">Let's talk</a>
         <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
       </div>
     </div>
@@ -70,7 +70,7 @@
         <ul class="facts">
           <li><span class="k">Location</span><span>Open to all U.S. locations · currently New York</span></li>
           <li><span class="k">Status</span><span>Available now · U.S. citizen · no sponsorship needed</span></li>
-          <li><span class="k">Education</span><span>MS Data Science, NYIT, May 2026 · Data Science Graduate Achievement Award<br>BS Electrical Engineering, FAST-NUCES Lahore, 2024</span></li>
+          <li><span class="k">Education</span><span>MS Data Science, NYIT, May 2026 · Data Science Graduate Achievement Award<br>BS Computer Engineering, FAST-NUCES Lahore, 2024</span></li>
           <li><span class="k">Elsewhere</span><span><a href="https://www.linkedin.com/in/syedzulqarnainh">LinkedIn</a> · <a href="https://github.com/Zulqarnain-10">GitHub</a> · <a href="https://www.upwork.com/freelancers/~01bd0c312572d26561">Upwork</a> · <a href="https://altechra.com">Altechra</a></span></li>
         </ul>
       </div>
@@ -127,11 +127,22 @@
         <p class="kicker">Kind words</p>
         <h2 class="title" id="words-title">What people <span class="acc">say.</span></h2>
       </div>
-      <div class="pull fx">
-        <blockquote>He'll be the best candidate you ever meet.</blockquote>
-        <p class="pull-attr">Yan Li · Applied Data Scientist, PhD Neuroscience · graduate coursework teammate at NYIT</p>
+      <div class="pull fx" id="quoteRotator">
+        <div class="pull-track">
+          <div class="pull-slide is-on">
+            <blockquote>He'll be the best candidate you ever meet.</blockquote>
+            <p class="pull-attr">Yan Li · Applied Data Scientist, PhD Neuroscience · graduate coursework teammate at NYIT</p>
+          </div>
+          <div class="pull-slide">
+            <blockquote>I believe he'll be a valuable asset to any team.</blockquote>
+            <p class="pull-attr">Muhammad Talha · Senior AI R&amp;D Engineer · Aerodyne Group</p>
+          </div>
+        </div>
+        <div class="pull-dots" role="tablist" aria-label="Recommendations">
+          <button type="button" role="tab" aria-selected="true" aria-label="Quote 1 of 2"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Quote 2 of 2"></button>
+        </div>
       </div>
-      <p class="qs-second fx">"I believe he'll be a valuable asset to any team."<span class="who">Muhammad Talha · Senior AI R&amp;D Engineer, Aerodyne Group</span></p>
       <div class="badges fx">
         <span>Clear communication ×8</span>
         <span>Reliable ×6</span>
@@ -150,40 +161,31 @@
     </div>
     <div class="edu-grid">
       <article class="edu fx">
-        <p class="edu-when">Aug 2024 – May 2026 · New York</p>
-        <h3>MS, Data Science</h3>
-        <p class="school">New York Institute of Technology · College of Engineering and Computing Sciences</p>
-        <span class="badge p">Graduate Achievement Award · conferred by the Dean, 2026</span>
-        <ul>
-          <li>Graduate research assistantship and scholarships alongside full-time work</li>
-          <li>Focus: machine learning, NLP, LLMs, deep learning, big data, computer vision</li>
-        </ul>
+        <img class="edu-img" src="/assets/nyit-commencement.webp" alt="Zulqarnain in regalia beside the New York Institute of Technology banner at commencement" width="500" height="375" loading="lazy" style="object-position:50% 82%">
+        <div class="edu-body">
+          <p class="edu-when">Aug 2024 – May 2026 · New York</p>
+          <h3>MS, Data Science</h3>
+          <p class="school">New York Institute of Technology · College of Engineering and Computing Sciences</p>
+          <span class="badge p">Graduate Achievement Award · conferred by the Dean, 2026</span>
+          <ul>
+            <li>Graduate research assistantship and scholarships alongside full-time work</li>
+            <li>Focus: machine learning, NLP, LLMs, deep learning, big data, computer vision</li>
+          </ul>
+        </div>
       </article>
       <article class="edu fx" style="--d:.1s">
-        <p class="edu-when">Sep 2020 – Jun 2024 · Lahore</p>
-        <h3>BS, Electrical Engineering</h3>
-        <p class="school">FAST National University of Computer and Emerging Sciences</p>
-        <span class="badge b">Final-year project 100% funded by the Pakistan Engineering Council</span>
-        <ul>
-          <li>Senior Vice President, IEEE NUCES Lahore · Head, TEDxFASTLahore</li>
-          <li>Final-year project: material classification via sensor fusion and machine learning</li>
-        </ul>
+        <img class="edu-img" src="/assets/fast-campus.webp" alt="FAST-NUCES campus, Lahore" width="500" height="375" loading="lazy">
+        <div class="edu-body">
+          <p class="edu-when">Sep 2020 – Jun 2024 · Lahore</p>
+          <h3>BS, Computer Engineering</h3>
+          <p class="school">FAST National University of Computer and Emerging Sciences</p>
+          <span class="badge b">Final-year project 100% funded by Pakistan's national engineering council</span>
+          <ul>
+            <li>Senior Vice President, IEEE NUCES Lahore · Head, TEDxFASTLahore</li>
+            <li>Final-year project: material classification via sensor fusion and machine learning</li>
+          </ul>
+        </div>
       </article>
-    </div>
-    <p class="snaps-label fx">From Lahore to New York</p>
-    <div class="snaps">
-      <figure class="snap fx" style="--r2:-2deg;--d:0s">
-        <img src="/assets/nyit-commencement.webp" alt="Zulqarnain in regalia beside the New York Institute of Technology banner at commencement" width="500" height="375" loading="lazy">
-        <figcaption>MS Data Science · NYIT, Class of 2026</figcaption>
-      </figure>
-      <figure class="snap fx" style="--r2:1.5deg;--d:.08s">
-        <img src="/assets/nyc-skyline.webp" alt="New York Institute of Technology building at Columbus Circle, New York City" width="500" height="375" loading="lazy">
-        <figcaption>NYIT · New York City</figcaption>
-      </figure>
-      <figure class="snap fx" style="--r2:-1.4deg;--d:.16s">
-        <img src="/assets/fast-campus.webp" alt="FAST-NUCES campus, Lahore" width="500" height="375" loading="lazy">
-        <figcaption>BS Electrical Engineering · FAST-NUCES, Lahore</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -225,7 +227,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/work/">Work</a></li>
           <li><a href="/about/">About</a></li>
-          <li><a href="#contact">Say hi</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
       <nav class="foot-col" aria-label="Work">
