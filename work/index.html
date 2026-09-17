@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work — Syed Zulqarnain Hassan</title>
-<meta name="description" content="Case studies from Syed Zulqarnain Hassan: a 15,242-record NYIT research study, 40+ production AI/ML products at Altechra, JobCraft, MedBot, and operations analytics at NSK. Every number has a source.">
+<meta name="description" content="Case studies from Syed Zulqarnain Hassan: a live credit-risk service, a DVC-tracked tweet emotion pipeline, a 15,242-record NYIT research study, 40+ client products, JobCraft, MedBot, and operations analytics at NSK. Every number has a source.">
 <meta property="og:title" content="Work — Syed Zulqarnain Hassan">
 <meta property="og:description" content="Results first, then how they happened. Case studies with receipts.">
 <meta property="og:type" content="website">
@@ -53,9 +53,9 @@
 <main id="main">
   <div class="page-head band-dark">
     <div class="wrap">
-      <p class="ph-kicker" data-up style="--d:0s">Work — five case studies, every number sourced</p>
+      <p class="ph-kicker" data-up style="--d:0s">Work — seven case studies, every number sourced</p>
       <h1 data-up style="--d:.06s">Results first, then <em>how they happened.</em></h1>
-      <p data-up style="--d:.12s">Five pieces of work, each written the same way: the problem, what I did, what changed. The numbers are the ones I can stand behind. Where the data is private, the source says so.</p>
+      <p data-up style="--d:.12s">Seven pieces of work, each written the same way: the problem, what I did, what changed. The numbers are the ones I can stand behind. Where the data is private, the source says so.</p>
     </div>
   </div>
 
@@ -99,15 +99,57 @@
       </div>
     </article>
 
-    <article class="case fx" id="altechra-case">
+    <article class="case fx" id="credit-risk">
+      <div class="metric">
+        <span class="n">0.79</span>
+        <span class="l">ROC-AUC on 6,000 held-out applicants</span>
+        <a class="receipt" href="https://syedzulqarnainh-credit-risk-service.hf.space">live demo ↗</a>
+        <a class="receipt" href="https://github.com/Zulqarnain-10/credit-risk-service" aria-label="Credit-risk service repository on GitHub">GitHub ↗</a>
+      </div>
+      <div>
+        <h2 class="case-t">Credit-risk service</h2>
+        <p class="ctx">Personal MLOps build · Sep 2026 · live on Hugging Face</p>
+        <dl class="car">
+          <dt>Challenge</dt>
+          <dd>Most model repos stop at a notebook. The goal here was a credit-default model shipped like a product: versioned data, reproducible metrics, and a service a recruiter can open and score against.</dd>
+          <dt>Action</dt>
+          <dd>Built a DVC pipeline over the UCI Taiwan credit-card dataset, a tested FastAPI endpoint (211 tests, 88% coverage), and CI that re-runs the pipeline and fails if metrics drift beyond ±0.005 — plus secret scanning, a Docker smoke test, and CD to GHCR and a live Space with drift monitoring.</dd>
+          <dt>Result</dt>
+          <dd class="result">0.79 ROC-AUC and 0.57 PR-AUC on the held-out split, p95 latency 382 ms at concurrency 10. Every number on the demo page is read from a file the pipeline wrote — nothing is typed by hand.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="case fx" id="tweet-emotion">
+      <div class="metric">
+        <span class="n">0.81</span>
+        <span class="l">accuracy on 2,068 held-out tweets</span>
+        <a class="receipt" href="https://syedzulqarnainh-tweet-emotion-pipeline.hf.space">live demo ↗</a>
+        <a class="receipt" href="https://github.com/Zulqarnain-10/tweet-emotion-pipeline" aria-label="Tweet emotion pipeline repository on GitHub">GitHub ↗</a>
+      </div>
+      <div>
+        <h2 class="case-t">Tweet emotion pipeline</h2>
+        <p class="ctx">Personal MLOps build · Sep 2026 · live on Hugging Face</p>
+        <dl class="car">
+          <dt>Challenge</dt>
+          <dd>An NLP result you can't reproduce isn't evidence. The aim was a text classifier where every artifact is byte-stable across machines and every public number has a file behind it.</dd>
+          <dt>Action</dt>
+          <dd>Built a six-stage DVC pipeline over crowd-labeled tweets, every stage driven by params.yaml, compared logistic regression, naive Bayes, and XGBoost by 5-fold cross-validation, and shipped the winner behind a tested FastAPI service (500+ tests, 96% coverage) with CI/CD to GHCR and a live Space.</dd>
+          <dt>Result</dt>
+          <dd class="result">0.81 accuracy and 0.889 ROC-AUC on the held-out split. One deliberate call: negation words stay out of the stop list, so "not happy" no longer scores like "happy".</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="case fx" id="client-work">
       <div class="metric">
         <span class="n" data-count>40+</span>
         <span class="l">AI/ML and full-stack products shipped to clients</span>
-        <a class="receipt" href="https://altechra.com">altechra.com ↗</a>
+        <a class="receipt" href="https://www.upwork.com/freelancers/~01bd0c312572d26561">Upwork profile ↗</a>
       </div>
       <div>
-        <h2 class="case-t">Production AI systems, Altechra</h2>
-        <p class="ctx">Founder · Apr 2025–now · New York</p>
+        <h2 class="case-t">Production AI systems for clients</h2>
+        <p class="ctx">Independent · Apr 2025–now · New York</p>
         <dl class="car">
           <dt>Challenge</dt>
           <dd>Clients want LLM features that behave in production, not in a demo: predictable outputs, human review where the stakes are high, and evidence that the system works before it ships.</dd>
@@ -202,12 +244,6 @@
           <a class="receipt" href="https://github.com/Zulqarnain-10/Disease-Prediction" aria-label="Disease prediction repository on GitHub">GitHub ↗</a>
         </article>
         <article class="bcard">
-          <p class="btag">Risk modeling</p>
-          <h3>Credit scoring</h3>
-          <p>Scoring model for credit risk.</p>
-          <a class="receipt" href="https://github.com/Zulqarnain-10/Credit-Scoring-Model" aria-label="Credit scoring repository on GitHub">GitHub ↗</a>
-        </article>
-        <article class="bcard">
           <p class="btag">Computer vision</p>
           <h3>Handwritten character recognition</h3>
           <p>Recognition over handwriting samples.</p>
@@ -263,36 +299,11 @@
           <ul>
             <li>AWS · Docker</li>
             <li>Git · GitHub Actions CI/CD</li>
-            <li>Flask · Streamlit</li>
+            <li>DVC · MLflow</li>
+            <li>FastAPI · Flask · Streamlit</li>
             <li>React · Node.js</li>
             <li>Databricks</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="altechra" aria-labelledby="altechra-title" style="padding-bottom:var(--sp)">
-    <div class="wrap">
-      <div class="alt-panel fx">
-        <span class="watermark" aria-hidden="true">ALTECHRA</span>
-        <div class="alt-grid">
-          <div class="alt-copy">
-            <img class="alt-logo" src="/assets/altechra-logo.webp" alt="Altechra logo" width="480" height="436" loading="lazy">
-            <p class="kicker warm">Founder</p>
-            <h2 id="altechra-title">I also run an agency — meet <span class="acc">Altechra.</span></h2>
-            <p>I founded Altechra to design and ship AI and full-stack products for clients. We have delivered 40+ of them — SaaS platforms, AI systems, fintech and mobile apps — with me leading discovery, architecture, and delivery end to end.</p>
-            <p style="margin-top:12px">It's where my data science meets the real world: scoping ambiguous problems, managing teams, and being accountable for outcomes, not just models.</p>
-            <div class="alt-cta">
-              <a class="btn btn-violet" href="https://altechra.com">Visit Altechra ↗</a>
-              <a class="btn btn-ghost" href="mailto:zulqarnainhsyed@gmail.com?subject=Project%20inquiry">Start a project</a>
-            </div>
-          </div>
-          <div class="alt-facts">
-            <div class="fact"><b>40+</b><span>products delivered across web, mobile &amp; AI</span></div>
-            <div class="fact"><b>E2E</b><span>discovery → architecture → deployment → support</span></div>
-            <div class="fact"><b>5★</b><span>Upwork-verified client reviews on altechra.com</span></div>
-          </div>
         </div>
       </div>
     </div>
@@ -342,17 +353,17 @@
       <nav class="foot-col" aria-label="Work">
         <h3>Work</h3>
         <ul>
-          <li><a href="/work/#jobcraft">JobCraft</a></li>
-          <li><a href="/work/#medbot">MedBot</a></li>
+          <li><a href="/work/#credit-risk">Credit-risk service</a></li>
+          <li><a href="/work/#tweet-emotion">Tweet emotion pipeline</a></li>
           <li><a href="/work/#nyit">NYIT study</a></li>
-          <li><a href="/work/#altechra-case">Altechra</a></li>
+          <li><a href="/work/#jobcraft">JobCraft</a></li>
+          <li><a href="/work/#client-work">Client work</a></li>
         </ul>
       </nav>
       <nav class="foot-col" aria-label="Elsewhere">
         <h3>Elsewhere</h3>
         <ul>
           <li><a href="https://www.upwork.com/freelancers/~01bd0c312572d26561">Upwork</a></li>
-          <li><a href="https://altechra.com">altechra.com</a></li>
           <li><a href="https://www.instagram.com/szulqarnain22">Instagram</a></li>
           <li><a href="https://x.com/szulqarnain22">X (Twitter)</a></li>
           <li><a href="/resume.pdf">Résumé (PDF)</a></li>
@@ -361,7 +372,7 @@
     </div>
     <div class="footer-row">
       <span>© 2026 Syed Zulqarnain Hassan</span>
-      <span>Numbers on this site are as of Aug 2026</span>
+      <span>Numbers on this site are as of Sep 2026</span>
       <span class="foot-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0F1F38"/><path d="M12 13 H44 V22.5 L25.5 41.5 H44 V51 H12 V41.5 L30.5 22.5 H12 Z" fill="#EAF0F9"/><circle cx="51.5" cy="45.5" r="5.5" fill="#FF6B35"/></svg></span>
     </div>
   </div>
