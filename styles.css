@@ -523,3 +523,7 @@ h2[id],section[id]{scroll-margin-top:96px}
 @media (prefers-reduced-motion:reduce){
   .help:hover .help-icon,a.receipt:hover,.foot-social a:hover{transform:none}
 }
+
+/* Marquee receipts: milestone numbers link to their source, quietly */
+.strip a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:3px}
+.strip a:hover{text-decoration-color:currentColor}
